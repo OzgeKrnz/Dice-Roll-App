@@ -1,9 +1,26 @@
-android/* linguist-vendored
-ios/* linguist-vendored
-web/* linguist-vendored
-windows/* linguist-vendored
-linux/* linguist-vendored
-macos/* linguist-vendored
+# Pods klasörü ve altı tamamen hariç
+Pods/** linguist-vendored
 
-# CMake dosyalarını da hariç tutabiliriz
-**/CMakeLists.txt linguist-vendored
+# macOS build klasörü de hariç (özellikle Makefile etkisi burada büyük)
+build/macos/** linguist-vendored
+
+# Diğer platform bağımlı klasörler
+android/** linguist-vendored
+ios/** linguist-vendored
+linux/** linguist-vendored
+macos/** linguist-vendored
+windows/** linguist-vendored
+
+# C/C++ gibi dillerin algılanmasını tamamen engelle
+*.c linguist-detectable=false
+*.cpp linguist-detectable=false
+*.h linguist-detectable=false
+*.cc linguist-detectable=false
+*.mm linguist-detectable=false
+*.m linguist-detectable=false
+
+# Makefile açık açık kapatılıyor
+**/Makefile linguist-detectable=false
+
+# Dart'ı aktif şekilde vurgula
+*.dart linguist-language=Dart
